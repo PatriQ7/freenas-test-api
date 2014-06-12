@@ -1,0 +1,26 @@
+Missing enabling api for all apis.
+
+DynamicDNS: Done *GET PUT
+AFP: Done *GET PUT
+FTP: Done *GET *PUT
+     Error *PUT 500 -- error_message : Sorry, this request could not be processed. Please try again later.
+     Solution: must give specific "ftp_anonpath":"/mnt/tank/" in request json
+               must add all configuration info in json
+     Report: missing necessary PUT request info in docmentation
+RsyncServer(2): On Process
+SMART: Done *GET PUT
+SNMP: Done *GET PUT
+SSH: Done *GET PUT
+TFTP: Done *GET PUT
+      Error *PUT 400 -- tftp_directory : [u'The path must reside within a volume mount point']
+      Solution: must add "tftp_directory":"/mnt/tank/" in request json
+      Report: missing necessary PUT request info in docmentation
+NFS: Done
+
+ISCSI(5): On Process
+        globalconfiguration:Done *GET 
+                            Error *PUT 500 -- error_message : Sorry, this request could not be processed. Please try again later.
+                            Error *PUT 400 -- iscsi_luc_authgroup: [u'Select a valid choice. 2 is not one of the available choices.']     
+                            Report: missing necessary PUT request info in docmentation
+        extent: Done
+                Report: Only one extent can exist.
