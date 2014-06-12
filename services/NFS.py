@@ -3,14 +3,14 @@
 import requests
 import json
 
-service = 'dynamicdns'
+service = 'nfs'
 headers = {'Content-Type':'application/json'}
 auth = ('root','patrick')
 payload = {
-          "ddns_provider": "dyndns@dyndns.org",
-          "ddns_username": "admin"
+          "nfs_srv_servers": 10,
+          "nfs_srv_udp": True
 }
-url = 'http://freenas-test1.sjlab1.ixsystems.com/api/v1.0/services/' + service + '/'
+url = 'http://freenas-test1.sjlab1.ixsystems.com/api/v1.0/services/' + service + '/' 
 
 r = requests.put(url, auth = auth, data = json.dumps(payload), headers = headers)
 
