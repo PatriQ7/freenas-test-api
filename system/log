@@ -1,0 +1,21 @@
+System:
+
+Settings: make https
+          specify port (http/https)
+          syslog server
+          Done *GET PUT
+          Report: api url should be /api/v1.0/system/settings/
+                  Settings not available in doc:
+                  SETTINGS -> download config / modify / restore
+                  SETTINGS -> SSL set certificate
+                  SETTINGS -> set alert email + send to non-root
+
+Sysctl: Done *GET POST PUT DELETE 
+
+Tunable: Done *GET POST PUT DELETE
+         Report: Only one tunable can exist
+
+NETWORK INTERFACES: On process
+                    Report: Missing info in doc
+
+
