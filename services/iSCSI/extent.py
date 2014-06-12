@@ -10,10 +10,13 @@ payload = {
           "iscsi_target_extent_type": "File",
           "iscsi_target_extent_name": "extent",
           "iscsi_target_extent_filesize": "10MB",
-          "iscsi_target_extent_path": "/mnt/tank0/iscsi"
+          "iscsi_target_extent_path": "/mnt/tank1/iscsi"
 }
 
 url = 'http://freenas-test1.sjlab1.ixsystems.com/api/v1.0/services/iscsi/' + service + '/'
+
+def extent_get():
+  r = requests.get(url, auth = auth)
 
 def extent_post():
   r = requests.post(url, auth = auth, data = json.dumps(payload), headers = headers)

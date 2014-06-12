@@ -7,8 +7,8 @@ service = 'tftp'
 headers = {'Content-Type':'application/json'}
 auth = ('root','patrick')
 payload = {
-          "tftp_port": 69,
-          "tftp_directory": "/mnt/tank0/"
+          "tftp_port": 75,
+          "tftp_directory": "/mnt/tank0"
 }
 url = 'http://freenas-test1.sjlab1.ixsystems.com/api/v1.0/services/' + service + '/' 
 

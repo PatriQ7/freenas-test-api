@@ -26,7 +26,7 @@ payload = {
           "ftp_onlyanonymous": False,
           "ftp_reversedns": False,
           "ftp_anonuserdlbw": 0,
-          "ftp_clients": 10,
+          "ftp_clients": 20,
           "ftp_tls": False,
           "ftp_tls_opt_allow_client_renegotiations": False,
           "ftp_tls_opt_allow_dot_login": False,

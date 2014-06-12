@@ -7,7 +7,7 @@ FTP: Done *GET *PUT
      Solution: must give specific "ftp_anonpath":"/mnt/tank/" in request json
                must add all configuration info in json
      Report: missing necessary PUT request info in docmentation
-RsyncServer(2): On Process
+Rsyncd(2): On Process
 SMART: Done *GET PUT
 SNMP: Done *GET PUT
 SSH: Done *GET PUT

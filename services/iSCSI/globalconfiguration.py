@@ -8,7 +8,7 @@ headers = {'Content-Type':'application/json'}
 auth = ('root','patrick')
 payload = {
           "iscsi_multithreaded": False,
-          "iscsi_maxconnect": 16,
+          "iscsi_maxconnect": 20,
           "iscsi_luc_authnetwork": "",
           "iscsi_iotimeout": 30,
           "iscsi_lucip": "127.0.0.1",
@@ -24,7 +24,7 @@ payload = {
           "iscsi_toggleluc": False,
           "iscsi_lucport": 3261,
           "iscsi_maxsesh": 16,
-          "iscsi_luc_authgroup": 2, 
+          "iscsi_luc_authgroup": None, 
           "iscsi_luc_authmethod": "",
           "iscsi_maxoutstandingr2t": 16,
 }
