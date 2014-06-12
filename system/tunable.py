@@ -7,7 +7,7 @@ import json
 headers = {'Content-Type':'application/json'}
 auth = ('root','patrick')
 payload = {
-          "tun_var": "xhci_load",
+          "tun_var": "xhci_load_whatever",
           "tun_comment": "",
           "tun_value": "YES",
           "tun_enabled": True
