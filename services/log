@@ -18,9 +18,17 @@ TFTP: Done *GET PUT
 NFS: Done
 
 ISCSI(5): On Process
-        globalconfiguration:Done *GET 
+          Globalconfiguration:Done *GET 
                             Error *PUT 500 -- error_message : Sorry, this request could not be processed. Please try again later.
                             Error *PUT 400 -- iscsi_luc_authgroup: [u'Select a valid choice. 2 is not one of the available choices.']     
                             Report: missing necessary PUT request info in docmentation
-        extent: Done
-                Report: Only one extent can exist.
+          Extent: Done
+                  Report: Only one extent can exist.
+          Authorized Initiator: Done *GET POST PUT DELETE
+          Auth Credential: Done *GET POST PUT DELETE
+	  Target: Done *GET
+                  Error *POST -- iscsi_target_portalgroup: [u'Select a valid choice. That choice is not one of the available choices.']
+                                 iscsi_target_authgroup: [u'Select a valid choice. null is not one of the available choices.']
+                  Report: documentation should clarify what choices are available
+          TargetToExtent: *need Target sovled
+          Portal: Done *GET POST PUT DELETE
