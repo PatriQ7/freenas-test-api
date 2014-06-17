@@ -1,4 +1,5 @@
 Login to FreeNAS: Done *GET
 Set the root password: Done *POST
 ZFS volume: Done *GET POST DELETE
-Dataset under volume: Report: Missing info in doc
+Dataset under volume: Done *GET POST DELETE
+                      Report: Missing 'Delete'info in doc
