@@ -8,7 +8,7 @@ headers = {'Content-Type':'application/json'}
 auth = ('root','patrick')
 payload = {
           "iscsi_target_extent_type": "File",
-          "iscsi_target_extent_name": "extent",
+          "iscsi_target_extent_name": "extent1",
           "iscsi_target_extent_filesize": "10MB",
           "iscsi_target_extent_path": "/mnt/tank1/iscsi"
 }
@@ -17,6 +17,12 @@ url = 'http://freenas-test1.sjlab1.ixsystems.com/api/v1.0/services/iscsi/' + ser
 
 def extent_get():
   r = requests.get(url, auth = auth)
+  result = json.loads(r.text)
+  i = 0 
+  for i in range(0,len(result)):
+    print '\n'
+    for items in result[i]:
+      print items+':', result[i][items]
 
 def extent_post():
   r = requests.post(url, auth = auth, data = json.dumps(payload), headers = headers)
@@ -45,3 +51,5 @@ while(1):
     extent_post()
   elif input == 'delete':
     extent_delete()
+  elif input == 'get':
+    extent_get()

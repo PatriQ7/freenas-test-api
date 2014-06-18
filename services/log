@@ -1,5 +1,7 @@
 Missing enabling api for all apis.
 
+Services Enable/Disable: Done *GET PUT
+                         WARNING: Some sercives could not be changed due to system stuff
 DynamicDNS: Done *GET PUT
 AFP: Done *GET PUT
 FTP: Done *GET *PUT
@@ -7,7 +9,7 @@ FTP: Done *GET *PUT
      Solution: must give specific "ftp_anonpath":"/mnt/tank/" in request json
                must add all configuration info in json
      Report: missing necessary PUT request info in docmentation
-Rsyncd(2): On Process
+Rsyncd: Done *GET PUT
 SMART: Done *GET PUT
 SNMP: Done *GET PUT
 SSH: Done *GET PUT

@@ -30,7 +30,6 @@ payload = {
 }
 
 url = 'http://freenas-test1.sjlab1.ixsystems.com/api/v1.0/services/iscsi/' + service + '/1/'
-
 r = requests.put(url, auth = auth, data = json.dumps(payload), headers = headers)
 print r.status_code
 result = json.loads(r.text)
@@ -40,4 +39,3 @@ r = requests.get(url, auth = auth)
 result = json.loads(r.text)
 #for items in result:
 #  print items+':',result[items]
-
