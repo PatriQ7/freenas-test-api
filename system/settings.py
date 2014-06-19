@@ -2,10 +2,13 @@
 
 import requests
 import json
+import sys
+sys.path.append('../conn/')
+import conn
 
 service = 'settings'
-headers = {'Content-Type':'application/json'}
-auth = ('root','patrick')
+headers = conn.headers
+auth = conn.auth
 payload = {
           "stg_timezone": "America/Los_Angeles",
           "stg_guiport": 80,
@@ -19,7 +22,7 @@ payload = {
           "stg_kbdmap": "",
           "id": 1
 }
-url = 'http://freenas-test1.sjlab1.ixsystems.com/api/v1.0/system/' + service + '/' 
+url = conn.url + 'system/' + service + '/' 
 
 r = requests.put(url, auth = auth, data = json.dumps(payload), headers = headers)
 

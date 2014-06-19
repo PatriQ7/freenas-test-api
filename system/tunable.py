@@ -2,10 +2,12 @@
 
 import requests
 import json
+import sys
+sys.path.append('../conn/')
+import conn
 
-
-headers = {'Content-Type':'application/json'}
-auth = ('root','patrick')
+headers = conn.headers
+auth = conn.auth
 payload = {
           "tun_var": "xhci_load_whatever",
           "tun_comment": "",
@@ -13,7 +15,7 @@ payload = {
           "tun_enabled": True
 }
 
-url = 'http://freenas-test1.sjlab1.ixsystems.com/api/v1.0/system/tunable/'
+url = conn.url + 'system/tunable/'
 
 def tunable_get():
   r = requests.get(url, auth = auth)

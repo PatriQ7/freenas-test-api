@@ -2,10 +2,12 @@
 
 import requests
 import json
+import sys
+sys.path.append('../conn/')
+import conn
 
-
-headers = {'Content-Type':'application/json'}
-auth = ('root','patrick')
+headers = conn.headers
+auth = conn.auth
 payload = {
           "sysctl_mib": "net.inet.tcp.rfc1323",
           "sysctl_comment": "",
@@ -13,7 +15,7 @@ payload = {
           "sysctl_enabled": True
 }
 
-url = 'http://freenas-test1.sjlab1.ixsystems.com/api/v1.0/system/sysctl/'
+url = conn.url + 'system/sysctl/'
 
 def sysctl_get():
   r = requests.get(url, auth = auth)
