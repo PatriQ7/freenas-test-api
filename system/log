@@ -15,7 +15,10 @@ Sysctl: Done *GET POST PUT DELETE
 Tunable: Done *GET POST PUT DELETE
          Report: Only one tunable can exist
 
-NETWORK INTERFACES: On process
+NETWORK INTERFACES: *Transfer to network dir
                     Report: Missing info in doc
 
+Advanced: Done *GET PUT
+alert: Done *GET
+CronJob: Done *GET POST PUT DELETE RUN
 
