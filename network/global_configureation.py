@@ -2,11 +2,14 @@
 
 import requests
 import json
+import sys
+sys.path.append('../conn/')
+import conn
 
 service = 'globalconfiguration'
-url = 'http://freenas-test1.sjlab1.ixsystems.com/api/v1.0/network/' + service + '/'
-auth = ('root','patrick')
-headers = {'Content-Type':'application/json'}
+url = conn.url + 'network/' + service + '/'
+auth = conn.auth
+headers = conn.headers
 payload = {
           "gc_domain": "local",
           "gc_ipv4gateway": "10.5.0.1",

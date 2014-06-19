@@ -2,11 +2,14 @@
 
 import requests
 import json
+import sys 
+sys.path.append('../conn/')
+import conn
 
 service = 'interface'
-url = 'http://freenas-test1.sjlab1.ixsystems.com/api/v1.0/network/' + service + '/'
-auth = ('root','patrick')
-headers = {'Content-Type':'application/json'}
+url = conn.url + 'network/' + service + '/'
+auth = conn.auth
+headers = conn.headers
 payload = {
           "int_ipv4address": "10.5.32.12",
           "int_name": "ext",

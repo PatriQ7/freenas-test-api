@@ -2,11 +2,15 @@
 
 import requests
 import json
+import sys 
+sys.path.append('../conn/')
+import conn
+
 
 service = 'staticroute'
-url = 'http://freenas-test1.sjlab1.ixsystems.com/api/v1.0/network/' + service + '/'
-auth = ('root','patrick')
-headers = {'Content-Type':'application/json'}
+url = conn.url + 'network/' + service + '/'
+auth = conn.auth
+headers = conn.headers
 payload = {
           "sr_destination": "192.168.1.0/24",
           "sr_gateway": "192.168.3.1",
