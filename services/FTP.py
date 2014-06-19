@@ -2,9 +2,12 @@
 
 import requests
 import json
+import sys
+sys.path.append('../conn/')
+import conn
 
-headers = {'Content-Type':'application/json'}
-auth = ('root','patrick')
+headers = conn.headers
+auth = conn.auth
 payload = {
           "ftp_anonuserbw": 0,
           "ftp_ident": False,
@@ -50,7 +53,7 @@ payload = {
           "ftp_anonpath": "/mnt/tank0/"
 }
 
-url = 'http://freenas-test1.sjlab1.ixsystems.com/api/v1.0/services/ftp/' 
+url = conn.url + 'services/ftp/' 
 
 r = requests.put(url,auth=auth,headers=headers,data=json.dumps(payload))
 #r = requests.get(url,auth=auth)

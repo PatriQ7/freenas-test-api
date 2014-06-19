@@ -2,10 +2,13 @@
 
 import requests
 import json
+import sys
+sys.path.append('../../conn/')
+import conn
 
 service = 'authorizedinitiator'
-headers = {'Content-Type':'application/json'}
-auth = ('root','patrick')
+headers = conn.headers
+auth = conn.auth
 payload = {
           "iscsi_target_initiator_initiators": "ALL",
           "iscsi_target_initiator_comment": "",
@@ -13,7 +16,7 @@ payload = {
           "iscsi_target_initiator_tag": 1
 }
 
-url = 'http://freenas-test1.sjlab1.ixsystems.com/api/v1.0/services/iscsi/' + service + '/'
+url = conn.url + 'services/iscsi/' + service + '/'
 
 def auth_init_get():
   r = requests.get(url, auth = auth)

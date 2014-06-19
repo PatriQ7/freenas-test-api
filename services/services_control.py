@@ -2,13 +2,16 @@
 
 import requests
 import json
+import sys
+sys.path.append('../conn/')
+import conn
 
-headers = {'Content-Type':'application/json'}
-auth = ('root','patrick')
+headers = conn.headers
+auth = conn.auth
 payload = {
           "srv_enable": True
 }
-url = 'http://freenas-test1.sjlab1.ixsystems.com/api/v1.0/services/services/'
+url = conn.url + 'services/services/'
 
 def services_get():
   r = requests.get(url, auth = auth)

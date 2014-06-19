@@ -2,15 +2,18 @@
 
 import requests
 import json
+import sys
+sys.path.append('../conn/')
+import conn
 
 service = 'dynamicdns'
-headers = {'Content-Type':'application/json'}
-auth = ('root','patrick')
+headers = conn.headers
+auth = conn.auth
 payload = {
           "ddns_provider": "dyndns@dyndns.org",
           "ddns_username": "admin"
 }
-url = 'http://freenas-test1.sjlab1.ixsystems.com/api/v1.0/services/' + service + '/'
+url = conn.url + 'services/' + service + '/'
 
 r = requests.put(url, auth = auth, data = json.dumps(payload), headers = headers)
 

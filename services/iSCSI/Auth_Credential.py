@@ -2,10 +2,13 @@
 
 import requests
 import json
+import sys
+sys.path.append('../../conn/')
+import conn
 
 service = 'authcredential'
-headers = {'Content-Type':'application/json'}
-auth = ('root','patrick')
+headers = conn.headers
+auth = conn.auth
 payload = {
           "iscsi_target_auth_secret": "secret",
           "iscsi_target_auth_peeruser": "peeruser",
@@ -14,7 +17,7 @@ payload = {
           "iscsi_target_auth_tag": 1,
 }
 
-url = 'http://freenas-test1.sjlab1.ixsystems.com/api/v1.0/services/iscsi/' + service + '/'
+url = conn.url + 'services/iscsi/' + service + '/'
 
 def auth_cred_get():
   r = requests.get(url, auth = auth)

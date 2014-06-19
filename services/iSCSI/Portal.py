@@ -2,10 +2,13 @@
 
 import requests
 import json
+import sys
+sys.path.append('../../conn/')
+import conn
 
 service = 'portal'
-headers = {'Content-Type':'application/json'}
-auth = ('root','patrick')
+headers = conn.headers
+auth = conn.auth
 payload = {
           "iscsi_target_portal_ips": [
                   "0.0.0.0:3260"
@@ -13,7 +16,7 @@ payload = {
           "iscsi_target_portal_comment": ""
 }
 
-url = 'http://freenas-test1.sjlab1.ixsystems.com/api/v1.0/services/iscsi/' + service + '/'
+url = conn.url + 'services/iscsi/' + service + '/'
 
 def portal_get():
   r = requests.get(url, auth = auth)

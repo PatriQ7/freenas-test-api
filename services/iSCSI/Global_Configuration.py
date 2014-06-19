@@ -2,10 +2,13 @@
 
 import requests
 import json
+import sys
+sys.path.append('../../conn/')
+import conn
 
 service = 'globalconfiguration'
-headers = {'Content-Type':'application/json'}
-auth = ('root','patrick')
+headers = conn.headers
+auth = conn.auth
 payload = {
           "iscsi_multithreaded": False,
           "iscsi_maxconnect": 20,
@@ -29,7 +32,7 @@ payload = {
           "iscsi_maxoutstandingr2t": 16,
 }
 
-url = 'http://freenas-test1.sjlab1.ixsystems.com/api/v1.0/services/iscsi/' + service + '/1/'
+url = conn.url + 'services/iscsi/' + service + '/1/'
 r = requests.put(url, auth = auth, data = json.dumps(payload), headers = headers)
 print r.status_code
 result = json.loads(r.text)
