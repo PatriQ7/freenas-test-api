@@ -6,20 +6,15 @@ import sys
 sys.path.append('../conn/')
 import conn
 
-vol_name = raw_input('Input volume name:')
-url = conn.url+'storage/volume/'+vol_name+'/datasets/'
+url = conn.url+'storage/snapshot/'
 auth = conn.auth
 headers = conn.headers
 payload = {
-  "avail": "2.44G",
-  "mountpoint": "/mnt/"+vol_name+"/foo",
-  "name": "foo",
-  "pool": "tank",
-  "refer": "144K",
-  "used": "144K"
+          "dataset": "tank0",
+          "name": "test0"
 }
 
-def dataset_get():
+def snapshot_get():
   r = requests.get(url, auth = auth)
   result = json.loads(r.text)
   i = 0
@@ -27,21 +22,22 @@ def dataset_get():
     for items in result[i]:
       print items+':', result[i][items]
 
-def dataset_post():
+def snapshot_post():
   r = requests.post(url, auth = auth, data = json.dumps(payload), headers = headers)
   result = json.loads(r.text)
   for items in result:
     print items+'/', result[items]
 
-def dataset_delete():
-  r = requests.delete(url+'foo/', auth = auth)
+def snapshot_delete():
+  id = raw_input('Input id:')+'/'
+  r = requests.delete(url+id, auth = auth)
   print r.status_code
 
 while (1):
   method = raw_input('Input method:')
   if method == 'get':
-    dataset_get()
+    snapshot_get()
   elif method == 'post':
-    dataset_post()
+    snapshot_post()
   elif method == 'delete':
-    dataset_delete()
+    snapshot_delete()
