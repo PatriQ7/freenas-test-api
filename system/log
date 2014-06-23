@@ -21,4 +21,9 @@ NETWORK INTERFACES: *Transfer to network dir
 Advanced: Done *GET PUT
 alert: Done *GET
 CronJob: Done *GET POST PUT DELETE RUN
-
+Email: Done *GET PUT
+InitShutdown: Done *GET POST PUT DELETE
+NTPServer: Done *GET POST PUT DELETE
+Rsync: Done *GET POST PUT DELETE RUN
+SMARTTest: Done *GET POST PUT DELETE
+SSL: Done *GET PUT
