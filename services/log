@@ -18,7 +18,6 @@ TFTP: Done *GET PUT
       Solution: must add "tftp_directory":"/mnt/tank/" in request json
       Report: missing necessary PUT request info in docmentation
 NFS: Done
-
 ISCSI(5): On Process
           Globalconfiguration:Done *GET 
                             Error *PUT 500 -- error_message : Sorry, this request could not be processed. Please try again later.
@@ -34,3 +33,10 @@ ISCSI(5): On Process
                   Report: documentation should clarify what choices are available
           TargetToExtent: *need Target sovled
           Portal: Done *GET POST PUT DELETE
+UPS: Done *GET PUT
+CIFS: Done *GET PUT
+LDAP: Done *GET PUT
+LLDP: Done *GET PUT
+NIS: Done *GET PUT
+NT4: Done *GET PUT
+RsyncMod: Done *GET POST PUT DELETE

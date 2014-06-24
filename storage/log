@@ -5,3 +5,7 @@ Dataset under volume: Done *GET POST DELETE
                       Report: Missing 'Delete'info in doc
 Snapshot: Done *GET POST DELETE
           Report: wrong information about "dataset" in post and (sting:id) in delete
+Task: Done *GET POST DELETE
+Replication: Done *GET POST PUT DELETE
+Scrub: Done *GET POST PUT DELETE
+Disk: Done *GET PUT
